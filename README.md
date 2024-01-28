@@ -12,8 +12,8 @@ This project is a Node.js (Express) application that sends mails to users using 
 3.Create a .env file in the root directory of the project and add the following environment variables:
 
 `PORT=3000
-JWT_SECRET=your_jwt_secret
-MAILER_EMAIL=your_email_address
+JWT_SECRET=your_jwt_secret <br>
+MAILER_EMAIL=your_email_address <br>
 MAILER_PASSWORD=your_email_password`
 
 4.Start the server using the following command:`npm start`
@@ -23,11 +23,11 @@ MAILER_PASSWORD=your_email_password`
 
  * Table
 
-Endpoint	 Method	  Description
-/register	  POST	   Registers a new user.
-/login	      POST	    Logs in a user.
-/token	      POST	    Creates a JWT token.
-/forgotpassword	  POST	    Sends an email to the user.
+Endpoint	 Method	  Description<br>
+/register	  POST	   Registers a new user.<br>
+/login	      POST	    Logs in a user.<br>
+/token	      POST	    Creates a JWT token.<br>
+/forgotpassword	  POST	    Sends an email to the user.<br>
 /vaildate	POST	Resets the user’s password.
 
 ### Contributing
