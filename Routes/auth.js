@@ -70,18 +70,21 @@ router.post("/forgotpassword", async (req, res) => {
 // update password
 router.post("/validate", async (req, res) => {
 try {
-    const {  password, otp } = req.body;
-  const user = User.findOne({otp});
+    const {  username,password, otp } = req.body;
+  const user =await User.findOne({username});
   if (!user) {
-    return res.send("incorect otp");
+    return res.send("User not found");
   }
-//  const hashedPassword = bcrypt.hash(password, 10);
+  if(otp==user.otp){
+ const hashedPassword =await bcrypt.hash(password, 10);
 const updatedPassword=     await User.findByIdAndUpdate(user._id, {
-      password: password,
+      password: hashedPassword,
     });
     if(updatedPassword){
-    res.status(201).json({ message: "Password updated" });
+    return res.status(201).json({ message: "Password updated" });
     }
+  }
+res.status(500).json({error:"error"})
 
 } catch (error) {
     console.log(error);

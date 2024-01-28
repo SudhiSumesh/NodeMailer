@@ -6,7 +6,6 @@ const sendEmail= async (email,otp)=>{
         port: 465,
         secure: true,//dls connection
         auth: {
-          // TODO: replace `user` and `pass` values from <https://forwardemail.net>
           user: "sudhisumesh854797@gmail.com",
           pass: "dlkx uqtt oblj kwvn",
         },
