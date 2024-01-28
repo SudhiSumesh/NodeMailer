@@ -11,7 +11,7 @@ const sendEmail= async (email,otp)=>{
         },
       });
       const info = await transporter.sendMail({
-        from: `NotiGo 👻 <process.env.MAILER_EMAIL>`, // sender address
+        from: `NotiGo 👻 <${process.env.MAILER_EMAIL}>`, // sender address
         to: email, // list of receivers
         subject: "Reset Password", // Subject line
         html: `<h2>${otp}</h2>`, // html body
