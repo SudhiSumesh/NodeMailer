@@ -6,12 +6,12 @@ const sendEmail= async (email,otp)=>{
         port: 465,
         secure: true,//dls connection
         auth: {
-          user: "sudhisumesh854797@gmail.com",
-          pass: "dlkx uqtt oblj kwvn",
+          user: "your email@gmail.com",
+          pass: "your password",
         },
       });
       const info = await transporter.sendMail({
-        from: '"NotiGo 👻" <sudhisumesh854797@gmail.com>', // sender address
+        from: '"NotiGo 👻" <youremail@gmail.com>', // sender address
         to: email, // list of receivers
         subject: "Reset Password", // Subject line
         html: `<h2>${otp}</h2>`, // html body
